@@ -1,133 +1,124 @@
-# ImmigraSmart — Landing Page
+🇨🇿 ImmigraSmart — Landing Page
+The official static storefront for ImmigraSmart — the AI-powered immigration assistant built for international students navigating the Czech Republic.
 
-Sitio estático para promocionar [ImmigraSmart](https://immigrasmart.streamlit.app/), el asistente de inmigración con IA para estudiantes internacionales en la República Checa.
-
-## 📦 Contenido del proyecto
-
-```
+📦 Project Structure
+Plaintext
 immigrasmart-vercel/
-├── index.html       # La página completa (HTML + CSS + JS en un solo archivo)
-├── vercel.json      # Configuración de Vercel (headers de seguridad, caching)
-├── package.json     # Metadatos del proyecto
-└── README.md        # Este archivo
-```
+├── index.html       # The entire frontend (HTML + CSS + JS in one file)
+├── vercel.json      # Vercel configuration (security headers, caching)
+├── package.json     # Project metadata
+└── README.md        # You are here
+Note: Zero build steps required. This is pure, lightweight static HTML — it deploys exactly as is.
 
-No hay paso de build. Es HTML estático puro — se despliega tal cual.
+🚀 Deployment (3 Ways to Ship It)
+Option 1 · Drag & Drop (The Fastest Route)
+Compress the immigrasmart-vercel folder into a .zip file.
 
----
+Head over to vercel.com/new.
 
-## 🚀 Cómo desplegar en Vercel (3 opciones)
+Drag and drop the zip file directly onto the dashboard.
 
-### Opción 1 · Drag & drop (la más rápida)
+Vercel will automatically detect the static setup.
 
-1. Comprime la carpeta `immigrasmart-vercel` en un `.zip`
-2. Ve a [vercel.com/new](https://vercel.com/new)
-3. Arrastra el zip a la pantalla
-4. Vercel detectará automáticamente que es un sitio estático
-5. Click en **Deploy** — listo en ~10 segundos
+Click Deploy — your site will be live in ~10 seconds.
 
-### Opción 2 · Desde GitHub (recomendada para producción)
+Option 2 · Via GitHub (Recommended for Production)
+Push this folder to a fresh GitHub repository to unlock continuous deployment:
 
-1. Sube esta carpeta a un repositorio nuevo en GitHub:
-   ```bash
-   cd immigrasmart-vercel
-   git init
-   git add .
-   git commit -m "Initial commit"
-   git branch -M main
-   git remote add origin https://github.com/TU-USUARIO/immigrasmart-landing.git
-   git push -u origin main
-   ```
-2. En [vercel.com/new](https://vercel.com/new), conecta tu cuenta de GitHub
-3. Selecciona el repo `immigrasmart-landing`
-4. Vercel detectará el `package.json` y la configuración. **Framework Preset:** `Other`
-5. Click **Deploy**
+Bash
+cd immigrasmart-vercel
+git init
+git add .
+git commit -m "Initial commit"
+git branch -M main
+git remote add origin https://github.com/YOUR-USERNAME/immigrasmart-landing.git
+git push -u origin main
+Go to vercel.com/new and link your GitHub account.
 
-Cada `git push` a `main` desplegará automáticamente. Ramas y PRs generan preview URLs.
+Import the immigrasmart-landing repository.
 
-### Opción 3 · Vercel CLI (para desarrolladores)
+Vercel will detect the package.json. Keep the Framework Preset as Other.
 
-```bash
-# Instala la CLI (una sola vez)
+Click Deploy.
+
+Every subsequent git push to main will trigger an automatic deployment. PRs and branches will generate live preview URLs.
+
+Option 3 · Vercel CLI (For Terminal Power Users)
+Bash
+# Install the CLI (one-time setup)
 npm i -g vercel
 
-# Desde la carpeta del proyecto
+# Navigate to the project directory
 cd immigrasmart-vercel
+
+# Deploy to preview
 vercel
 
-# Para producción
+# Ship to production
 vercel --prod
-```
+🌐 Custom Domains
+Once deployed, making it officially yours is simple:
 
----
+Navigate to your project dashboard in Vercel.
 
-## 🌐 Dominio personalizado
+Go to Settings → Domains.
 
-Después de desplegar:
+Enter your custom domain (e.g., immigrasmart.com).
 
-1. Ve al dashboard del proyecto en Vercel
-2. **Settings → Domains**
-3. Agrega tu dominio (ej. `immigrasmart.com`)
-4. Vercel te dará los registros DNS que debes configurar en tu proveedor (Namecheap, GoDaddy, Cloudflare, etc.)
+Vercel will provide the DNS records to add to your registrar (Namecheap, GoDaddy, Cloudflare, etc.).
 
-Los certificados SSL son automáticos y gratuitos.
+SSL certificates are generated and renewed automatically for free.
 
----
+🛠️ Local Development
+Want to test tweaks before shipping?
 
-## 🛠 Desarrollo local
-
-Para ver la página localmente antes de desplegar:
-
-```bash
-# Opción 1 — abre directo el archivo
+Bash
+# Option 1 — Open the file directly
 open index.html        # macOS
 xdg-open index.html    # Linux
 start index.html       # Windows
 
-# Opción 2 — servidor local (mejor)
+# Option 2 — Spin up a local server (Recommended)
 npx serve .
-# o
+# or
 python3 -m http.server 8000
-```
+🎨 Quick Customization
+Everything is self-contained in index.html. The core design system is controlled by CSS variables at the top of the <style> block:
 
----
-
-## ✏️ Personalización rápida
-
-Todo está en `index.html`. Variables principales en la parte superior del `<style>`:
-
-```css
+CSS
 :root{
-  --cz-blue: #11457E;     /* Azul checo principal */
-  --cz-red:  #D7141A;     /* Rojo checo principal */
-  --ink:     #0B1B3A;     /* Color de texto principal */
+  --cz-blue: #11457E;     /* Primary Czech Blue */
+  --cz-red:  #D7141A;     /* Primary Czech Red */
+  --ink:     #0B1B3A;     /* Deep text color */
 }
-```
+Update these hex codes, and the entire UI will adapt instantly.
 
-Cambia esos valores y el resto del sitio se adapta automáticamente.
+Links to Update:
+If you change your repository or demo domain, find and replace these URLs in the HTML:
 
-### Enlaces a actualizar
+[https://immigrasmart.streamlit.app/](https://immigrasmart.streamlit.app/) → Your live app URL
 
-Si cambias el repo o el dominio del demo, busca y reemplaza:
-- `https://immigrasmart.streamlit.app/` → tu URL del demo
-- `https://github.com/vanos0600/ImmigraSmart` → tu repo de GitHub
+[https://github.com/vanos0600/ImmigraSmart](https://github.com/vanos0600/ImmigraSmart) → Your GitHub repo
 
----
+✅ Post-Launch Checklist
+[ ] Site loads instantly at your-project.vercel.app
 
-## 📋 Checklist post-deployment
+[ ] "Launch the live demo" CTA routes correctly
 
-- [ ] El sitio carga correctamente en `tu-proyecto.vercel.app`
-- [ ] El botón "Launch the live demo" abre `immigrasmart.streamlit.app`
-- [ ] El botón "View on GitHub" abre tu repo
-- [ ] El sitio se ve bien en móvil (prueba en tu teléfono)
-- [ ] Configuras dominio personalizado (opcional)
-- [ ] Compartes el link 🚀
+[ ] "View on GitHub" CTA points to the right repository
 
----
+[ ] UI remains responsive on mobile devices
 
-## 📄 Licencia
+[ ] Custom domain successfully mapped (optional)
 
-MIT — usa, modifica, distribuye libremente.
+[ ] Share the link with the world 🚀
 
-Hecho con ❤️ en Praga.
-# Immigralanding
+👨‍💻 Creators
+Oskar David Vanegas Juarez
+
+Ayon Das
+
+📄 License
+This project is licensed under the MIT License — feel free to use, modify, and distribute it.
+
+Built with ❤️ in Prague.
